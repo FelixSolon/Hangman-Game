@@ -1,0 +1,36 @@
+/*font-family: 'Anonymous Pro', monospace;*/
+
+body {
+	background-color: #000;
+}
+
+h1 {
+	font-family: 'Press Start 2P', cursive;
+}
+
+* {
+	color: #0f0;
+}
+
+#startText {
+	line-height: 100px;
+	color: #0f0;
+}
+
+#startBox {
+	z-index: 1;
+}
+
+.jumbotron {
+	background-color: #000;
+}
+
+/*stolen from Stack Overflow*/
+
+.verticalCenter {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
