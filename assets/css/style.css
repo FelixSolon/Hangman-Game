@@ -21,6 +21,10 @@ h1 {
 	z-index: 1;
 }
 
+#gameBox {
+	display: none;
+}
+
 .jumbotron {
 	background-color: #000;
 }
