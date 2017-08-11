@@ -144,7 +144,7 @@ if(gameStarted===true){
 	    		lossNumber+=1;
 	    		//outputs the new number to HTML
 	    		losses.innerHTML = "Losses: " + lossNumber;
-	    		alert("You suck! Your word was " + chosenWord);
+	    		alert("You lose! Your word was " + chosenWord);
 	    		//resets blankWord to empty.
 	    		blankWord = [];
 	    		//picks a new word
