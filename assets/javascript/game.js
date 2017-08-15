@@ -30,7 +30,6 @@ if(!gameStarted){
 		document.getElementById("startBox").style.display = "none";
 		//sets everything else, which starts unrendered, to render.
 		document.getElementById("gameBox").style.display = "initial";
-		console.log(gameStarted)
 		}
 		//stops it from ever running again. I could probably code a reset button at this point where if pressed it calls this block as a function, but I haven't gotten around to that.
 		gameStarted = true;
@@ -126,20 +125,16 @@ if(gameStarted===true){
 		for (var i = 0 ; i < blankWord.length; i++) {
 			blankWordLC[i] = blankWord[i].toLowerCase();
 		};
-		console.log(blankWordLC);
-		console.log(letter.charCodeAt());
 		//I am *quite* proud of this actually. I didn't have to put in every single letter in a giant if statement! Thanks, Unicode!
 		//I'm sorta wondering if there's a more efficient way to say "for x in range y-z" in JavaScript, but I haven't had a chance to dig for it yet.
 		//if (you can't find what key you pressed in the "already guessed" index) AND (the character code of your letter is lower-case-A or later)
 		//AND (the character code of your letter is lower-case-z or earlier AND (the guess isn't part of the displayed word yet))
 		if(guesses.indexOf(letter) === -1 && letter.charCodeAt() > 93 && letter.charCodeAt() < 123 && blankWordLC.indexOf(letter) === -1){
-			console.log(letter.charCodeAt());
 			guesses.push(letter);
 			guessedLettersField.innerHTML = "Letters Already Guessed: " + guesses.join(" ");
 			guessesRemaining-=1;
 			//Finally found the correct position in the code to put this such that it doesn't require an extra keypress to trigger the fail state.
 			if (guessesRemaining < 1) {
-				console.log("BLarg")
 	    		//Increments the number of losses
 	    		lossNumber+=1;
 	    		//outputs the new number to HTML
