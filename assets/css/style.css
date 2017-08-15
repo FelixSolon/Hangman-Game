@@ -1,5 +1,11 @@
 /*font-family: 'Anonymous Pro', monospace;*/
 
+h3 {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 20px;
+	color: #0f0;
+}
+
 body {
 	background-color: #000;
 }
