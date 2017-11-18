@@ -17,9 +17,7 @@ var guesses = [];
 var guessesRemaining = 12;
 
 //The following if statement is me trying to be clever and make this a single page app with a title screen.
-
-
-if(!gameStarted){
+/*if(!gameStarted){
 	//listens for a key press (technically key down, but eeh)
 	document.onkeydown = function(event){
 		//initializes variable, because not initializing your variables is bad, m'kay?
@@ -33,7 +31,7 @@ if(!gameStarted){
 		}
 		//stops it from ever running again. I could probably code a reset button at this point where if pressed it calls this block as a function, but I haven't gotten around to that.
 		gameStarted = true;
-}
+}*/
 
 
 //to keep track of my initial list if I remove things from the array.
@@ -113,9 +111,9 @@ function hangman(arr, val) {
 
 
 //somehow, you broke it such that it'll subtract a guess for capital letter but not a lower case letter. 
-if(gameStarted===true){
 //Pulls a letter that someone types
-	document.onkeypress = function(event) {
+document.onkeypress = function(event) {
+	if(gameStarted===true){
 		//Sanitizes input by grabbing the actual unicode of the keypress, converting it to a character, rendering it as a string, and converting it to lowercase,
 		var letter = String.fromCharCode(event.keyCode).toLowerCase();
 		//runs through the Hangman code
@@ -156,7 +154,13 @@ if(gameStarted===true){
 		}
 		guessesRemainingField.innerHTML = "Number of Guesses Remaining: " + guessesRemaining;
 	}
-}
+	else {
+		document.getElementById("startBox").style.display = "none";
+		//sets everything else, which starts unrendered, to render.
+		document.getElementById("gameBox").style.display = "initial";
+		gameStarted=true;
+	}
+} 
 
 
 
